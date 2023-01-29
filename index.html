@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container-fluid card border-0 px-0 pt-5 pb-4">
+        <div class="container modal-open p-0 mb-2 pb-3 justify-content-center">
+            <!-- NAV BAR -->
+<div class="px-1 py-0 bg-primary display-8">
+    <ul class="nav text-center row row no-gutters justify-content-center text-uppercase" id="myTab" role="tablist">
+        <li class="nav-item col" role="presentation">
+          <a class="border-0 nav-link btn btn-primary text-white active" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro-tab-pane" type="button" role="tab" aria-controls="intro-tab-pane" aria-selected="true">Intro</a>
+        </li>
+        <li class="nav-item col" role="presentation">
+          <a class="border-0 nav-link btn btn-primary text-white" id="exo1-tab" data-bs-toggle="tab" data-bs-target="#exo1-tab-pane" type="button" role="tab" aria-controls="exo1-tab-pane" aria-selected="false">Exercice 01</a>
+        </li>
+        <li class="nav-item col" role="presentation">
+            <a class="border-0 nav-link btn btn-primary text-white" id="exo2-tab" data-bs-toggle="tab" data-bs-target="#exo2-tab-pane" type="button" role="tab" aria-controls="exo2-tab-pane" aria-selected="false">Exercice 02</a>
+          </li>
+        <li class="nav-item col" role="presentation">
+            <a class="border-0 nav-link btn btn-primary text-white" id="exo3-tab" data-bs-toggle="tab" data-bs-target="#exo3-tab-pane" type="button" role="tab" aria-controls="exo3-tab-pane" aria-selected="false">Exercice 03</a>
+        </li>
+        <li class="nav-item col" role="presentation">
+            <a class="border-0 nav-link btn btn-primary text-white" id="exo4-tab" data-bs-toggle="tab" data-bs-target="#exo4-tab-pane" type="button" role="tab" aria-controls="exo4-tab-pane" aria-selected="false">Exercice 04</a>
+          </li>
+          
+      </ul>
+</div>
+            <!-- TAB CONTENT -->
+      <div class="tab-content" id="myTabContent">
+            <!-- TAB ONE -->
+        <div class="tab-pane fade in show active" id="intro-tab-pane" role="tabpanel" aria-labelledby="intro-tab" tabindex="0">
+            <div class="col mx-4 mt-3 bg-dark text-white px-2 py-1">
+                <h1 class="display-6 text-uppercase text-primary">Introduction</h1>
+            <div class="row no-gutters my-3">
+            <div class="col col-md-8 overflow">
+                <h2 class="text-uppercase text-primary">Présentation</h2>
+                <p>Code fait dans le cadre d'un bonus de l'évaluation sur le Javascript. <br>
+                J'ai déjà utilisé plusieurs fois bootstrap, étant donné que le site que j'utilise le plus pour codé est sous bootstrap5;
+                <br>J'ai essayé d'utiliser le moins possible le CSS mise à part pour des choses qui me parraissait infaisable, ou trop compliqué à faire via bootstrap.
+                <br>Cet onglet sert en réalité à rien, je trouvais juste plus sympathique d'en avoir cinq, et de ne pas arriver sur les exercices de Javascript directement.
+                <br>Pour les boutons "copier le code", j'ai été obligé d'utilisé du CSS car la class "btn-block" ne fonctionnait pas (si j'ai du temps, j'essayerais de revenir sur le code pour voir quel est le soucis)
+                </p>
+                <p class="text-center"><a href="https://github.com/SaraCrds">mon lien github</a></p>
+                <h2 class="text-uppercase text-primary">ChangeLog 25/01</h2>
+                <p>Correction d'une erreur qui affichait le fait d'avoir gagné et perdu en même temps sur l'exercice 03;
+                    <br> L'erreur était dû au fait que j'avais oublié de supprimer la condition de mon else if quand je l'ai passé en else.
+                </p>
+            </div>
+            <div class="col-0 col-md-4 p-0 totoro"></div>
+            </div>
+            </div>
+        </div>
+            <!-- TAB TWO -->
+        <div class="tab-pane fade in" id="exo1-tab-pane" role="tabpanel" aria-labelledby="exo1-tab" tabindex="0">
+            <div class="row no-gutters my-3">
+                <!-- RIGHT COLLUMN -->
+                <div class="col col-md-7 mx-4 mt-3 bg-dark text-white px-2 py-1">
+                        <h1 class="display-6 text-uppercase text-primary">Exercice 01</h1>
+                        <div class="overflow text-center">
+                             <p>Pour testez l'exercice, appuyez sur ce bouton: </p>
+                             <button class="btn btn-primary border-0 py-0 px-4 mb-1 text-uppercase" id="btnexo1">Testez l'exercice 01</button>
+                             <p id ="exo1text"></p>
+                        </div>
+                </div>
+                <!-- RIGHT COLLUMN -->
+                <div class="col-11 col-md-4 mx-3 mt-3 bg-dark text-white px-2 py-1">
+                        <h1 class="display-6 text-uppercase text-primary">Code</h1>
+                        <div class="code-overflow" id="CodeExo1">
+const exo1Button = document.getElementById('btnexo1');
+<br>exo1Button.addEventListener('click', (event) =&gt; {
+<br>var myArray = new Array();
+<br>n = 1;
+<br>y = 0;
+<br>var hundred = false;
+<br>myArray[y]= 0;
+<br>
+<br>// ASKING AGE UNTIL 100
+<br>
+<br>while (hundred == false)
+<br>    {
+<br>    myArray[y] = parseFloat(prompt(&quot;Entrez la donn&eacute;e num&eacute;ro &quot; + n ));
+<br>    if (myArray[y] &gt;= 100)
+<br>    {
+<br>        hundred = true;
+<br>    }
+<br>    y++;
+<br>    n++;
+<br>}
+<br>
+<br>document.getElementById(&quot;exo1text&quot;).innerHTML = (&quot;&lt;br&gt; Voici la liste des &acirc;ges que vous avez donnez: &quot; + myArray + &quot;&lt;br&gt;&quot;);
+<br>
+<br>var arrLen = myArray.length;
+<br>let x = 0;
+<br>let jeune =0 ;
+<br>let moyens = 0;
+<br>let vieux = 0;
+<br>let und = 0;
+<br>
+<br>// CHECKING  IF &lt; 20 = JEUNE; IF &gt; 40 = VIEUX; ELSE = MOYENS; +NAN INFOS
+<br>
+<br>while ( x &lt; arrLen)
+<br>{
+<br>
+<br>    if ( myArray[x] &lt; 20 )
+<br>    {
+<br>        console.log(myArray[x] + &quot; = jeune&quot;)
+<br>        jeune++;
+<br>    }
+<br>
+<br>    else if ( 40 &lt; myArray[x] )
+<br>    {
+<br>        console.log(myArray[x] + &quot; = vieux&quot;)
+<br>
+<br>        vieux++;
+<br>    }
+<br>
+<br>    else if ( 20 &lt;= myArray[x] &lt;= 40)
+<br>    {
+<br>        console.log(myArray[x] + &quot; = moyen&quot;)
+<br>
+<br>        moyens++;
+<br>}
+<br>                                
+<br>else 
+<br>{
+<br>    und++;
+<br>}
+<br>                                
+<br>x++;
+<br>}
+<br>                                                         
+<br>document.getElementById(&quot;exo1text&quot;).innerHTML += (&quot;&lt;br&gt; Dans les &quot; + arrLen + &quot; &acirc;ges que vous nous avez donn&eacute;es, il y a: &lt;br&gt;&quot; + jeune + &quot; personnes de moins de 20 ans. &lt;br&gt;&quot; + 
+moyens + &quot; personnes entre 20 et 40 ans. &lt;br&gt;&quot; + vieux + &quot; personnes de plus de 40 ans. &lt;br&gt;&lt;br&gt;&quot; + &quot;Il y a &eacute;galement &quot; + und + &quot; donn&eacute;es non-num&eacute;rique.&quot;)
+});
+                        </div>
+                        <br>
+                            <button class="btn btn-primary copycode border-0 py-1 px-4 mb-1 text-uppercase" id="CopyCodeExo1">copier le code</button>
+                </div>
+                <!--------END----------->
+            </div>
+        </div>
+            <!-- TAB THREE -->
+        <div class="tab-pane fade in" id="exo2-tab-pane" role="tabpanel" aria-labelledby="exo2-tab" tabindex="0">
+            <div class="row no-gutters my-3">
+                <!-- RIGHT COLLUMN -->
+                <div class="col col-md-7 mx-4 mt-3 bg-dark text-white px-2 py-1">
+                        <h1 class="display-6 text-uppercase text-primary">Exercice 02</h1>
+                        <div class="overflow">
+                             <p>Voici une table de multiplication fait avec la fonction demandé dans l'exercice :
+                            <br><br> <span id="mulitiplicationexo2"></span></p>
+                        </div>
+                </div>
+                <!-- RIGHT COLLUMN -->
+                <div class="col-11 col-md-4 mx-3 mt-3 bg-dark text-white px-2 py-1">
+                        <h1 class="display-6 text-uppercase text-primary">Code</h1>
+                        <div class="code-overflow" id="CodeExo2">
+function TableMultiplication (number){
+<br>    let y = 1;
+<br>    results = 0 ;
+<br>    while ( y &lt;= 10) {
+<br>    results = number * y;
+<br>    document.getElementById(&quot;mulitiplicationexo2&quot;).innerHTML += (y + &quot; x &quot; + number + &quot; = &quot; + results + &quot;&lt;br&gt;&quot;);
+<br>    y++;
+<br>        }
+<br>    }
+<br>                                  
+<br>    TableMultiplication(7);
+                        </div>
+                        <br>
+                        <button class="btn btn-primary copycode border-0 py-1 px-4 mb-1 text-uppercase" id="CopyCodeExo2">copier le code</button>
+                </div>
+                <!--------END----------->
+            </div>
+        </div>
+            <!-- TAB FOUR -->
+        <div class="tab-pane fade in" id="exo3-tab-pane" role="tabpanel" aria-labelledby="exo3-tab" tabindex="0">
+            <div class="row no-gutters my-3">
+                <!-- RIGHT COLLUMN -->
+                <div class="col col-md-7 mx-4 mt-3 bg-dark text-white px-2 py-1">
+                        <h1 class="display-6 text-uppercase text-primary">Exercice 03</h1>
+                        <div class="overflow text-center">
+                             <p>Pour testez l'exercice, appuyez sur ce bouton: </p>
+                             <button class="btn btn-primary border-0 py-0 px-4 mb-1 text-uppercase" id="btnexo3">Testez l'exercice 03</button>
+                             <p id ="exo3text"></p>
+                        </div>
+                </div>
+                <!-- RIGHT COLLUMN -->
+                <div class="col-11 col-md-4 mx-3 mt-3 bg-dark text-white px-2 py-1">
+                        <h1 class="display-6 text-uppercase text-primary">Code</h1>
+                        <div class="code-overflow" id="CodeExo3">
+const exo3Button = document.getElementById('btnexo3');
+<br>exo3Button.addEventListener('click', (event) =&gt; {
+<br>var tab = [&quot;audrey&quot;, &quot;aur&eacute;lien&quot;, &quot;flavien&quot;, &quot;j&eacute;r&eacute;my&quot;, &quot;laurent&quot;, &quot;melik&quot;, &quot;nouara&quot;, &quot;salem&quot;, &quot;samuel&quot;, &quot;st&eacute;phane&quot;];
+<br>console.log (tab);
+<br>
+<br>let search = prompt (&quot;Ecrivez un pr&eacute;nom &agrave; rechercher dans le tableau \nAttention aux accents! :)&quot;);
+<br>search = search.toLowerCase();
+<br>var searching = tab.indexOf(search);
+<br>
+<br>if ( searching != -1)
+<br>{
+<br>    document.getElementById(&quot;exo3text&quot;).innerHTML = (&quot;&lt;br&gt;&lt;br&gt; Trouv&eacute;! &lt;br&gt; Vous avez trouvez le pr&eacute;nom &quot; + search);
+<br>    tab.splice(searching, 1);
+<br>    tab.push(&quot; &quot;);
+<br>}
+<br>else
+<br>{
+<br>    document.getElementById(&quot;exo3text&quot;).innerHTML = (&quot;&lt;br&gt;&lt;br&gt; Perdu! &lt;br&gt; Le pr&eacute;nom &quot; + search + &quot; n'est pas dans la liste!&quot;);
+<br>    trouve = false;
+<br>}
+<br>
+<br>document.getElementById(&quot;exo3text&quot;).innerHTML += (&quot;&lt;br&gt; Nouvel array: &quot; + tab);
+<br>
+<br>// EDIT: vu que l'exercice n'&eacute;tais pas sens&eacute; se faire en boucle, j'ai simplement enlev&eacute; mon &quot;while&quot; et ma variable TROUVE qui me servait &agrave; savoir si
+<br>// je devais continuer la boucle ou non.
+<br>});
+                        </div>
+                        <br>
+                        <button class="btn btn-primary copycode border-0 py-1 px-4 mb-1  text-uppercase" id="CopyCodeExo3">copier le code</button>
+                </div>
+                <!--------END----------->
+            </div>
+        </div>
+            <!-- TAB FIVE -->
+        <div class="tab-pane fade in" id="exo4-tab-pane" role="tabpanel" aria-labelledby="exo4-tab" tabindex="0">
+            <div class="row no-gutters my-3">
+                <!-- RIGHT COLLUMN -->
+                <div class="col col-md-7 mx-4 mt-3 bg-dark text-white px-2 py-1">
+                        <h1 class="display-6 text-uppercase text-primary">Exercice 03</h1>
+                        <div class="overflow text-center">
+                             <p>Pour testez l'exercice, appuyez sur ce bouton: </p>
+                             <button class="btn btn-primary border-0 py-0 px-4 mb-1 text-uppercase" id="btnexo4">Testez l'exercice 04</button>
+                             <p id ="exo4text"></p>
+                        </div>
+                </div>
+                <!-- RIGHT COLLUMN -->
+                <div class="col-11 col-md-4 mx-3 mt-3 bg-dark text-white px-2 py-1">
+                        <h1 class="display-6 text-uppercase text-primary">Code</h1>
+                        <div class="code-overflow" id="CodeExo4">
+const exo4Button = document.getElementById('btnexo4');
+<br>exo4Button.addEventListener('click', (event) =&gt; {
+<br>PU = parseFloat(prompt(&quot;Saisissez le prix unitaine du produit&quot;));
+<br>QTECOM = parseFloat(prompt(&quot;Saisissez la quantit&eacute; souhait&eacute;&quot;));
+<br>TOT = PU*QTECOM;
+<br>PORTINI = 0;
+<br>
+<br>// CALCULE REMIS
+<br>
+<br>if (TOT &lt;= 100) {
+<br>    REM = &quot;0&quot;;
+<br>    REMPOUR = &quot;0%&quot;;
+<br>}
+<br>
+<br>else if (TOT &lt;= 200) {
+<br>    REM = (TOT * 0.05);
+<br>    TOT = TOT - REM;
+<br>    REMPOUR = &quot;5%&quot;;
+<br>}
+<br>
+<br>else if (TOT &gt; 200) {
+<br>    REM = (TOT * 0.10);
+<br>    TOT = TOT - REM;
+<br>    REMPOUR = &quot;10%&quot;;
+<br>}
+<br>
+<br>else {
+<br>    alert (&quot;Une des donn&eacute;es saisies n'&eacute;tait pas un nombre!&quot;)
+<br>}
+<br>
+<br>// CALCUL PORT
+<br>
+<br>if (TOT &lt; 500) {
+<br>    PORT= TOT * 0.02;
+<br>
+<br>    //// AJOUT PORT MINIMAL A 6E
+<br>    if (PORT &lt; 6) {
+<br>        PORTINI = PORT;
+<br>        PORT = 6;
+<br>    }
+<br>
+<br>    TOT_PORT= TOT + PORT;
+<br>    PORTPOUR = &quot;2%&quot;;
+<br>}
+<br>
+<br>else {
+<br>    PORT= TOT * 0.0;
+<br>    TOT_PORT= TOT + PORT;
+<br>    PORTPOUR = &quot;0%&quot;;
+<br>}
+<br>
+<br>// OUTPUT REM
+<br>
+<br>document.getElementById(&quot;exo4text&quot;).innerHTML = (&quot;&lt;br&gt; Remise de &quot; + REMPOUR + &quot; (-&quot; + REM + &quot;&euro;)&quot; + &quot;&lt;br&gt; Total sans frais de: &quot; + TOT.toFixed(2) +&quot;&euro;;&quot;);
+<br>
+<br>// OUTPUT PORT
+<br>
+<br>if (PORT !=6){
+<br>  document.getElementById(&quot;exo4text&quot;).innerHTML += (&quot; avec frais de port de &quot; + PORTPOUR + &quot; soit +&quot; + PORT.toFixed(2) + &quot;&euro; &agrave; payer&quot; + &quot;&lt;br&gt; Pour un total de: &quot; + TOT_PORT.toFixed(2) + &quot;&euro;&quot;);
+<br>}
+<br>
+<br>else {
+<br>    document.getElementById(&quot;exo4text&quot;).innerHTML += (&quot; avec frais de port de &quot; + PORTPOUR + &quot; soit +&quot; + PORTINI.toFixed(2) + &quot;, donc le minimum s'applique, soit +&quot; + PORT.toFixed(2)
+<br>     + &quot;&euro; &agrave; payer&quot; + &quot;&lt;br&gt; Pour un total de: &quot; + TOT_PORT.toFixed(2) + &quot;&euro;&quot;);
+<br>}
+<br>});
+                        </div>
+                        <br>
+                        <button class="btn btn-primary copycode border-0 py-1 px-4 mb-1 text-uppercase" id="CopyCodeExo4">copier le code</button>
+                </div>
+                <!--------END----------->
+            </div>
+        </div>
+    </div>
+            <!-- END TAB CONTENT -->
+    </div>
+</div>
+<script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

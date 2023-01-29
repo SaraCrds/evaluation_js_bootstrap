@@ -1,0 +1,56 @@
+.modal-open {
+    max-width: 1200px;
+    height: auto;
+    background-image: url('../../assets/img/koi.png');
+    background-repeat: repeat;
+    background-size: 250px;
+}
+
+.overflow {
+    height:400px;
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+.code-overflow {
+    height:340px;
+    overflow: auto;
+    overflow-wrap: break-word;
+    margin: 0px;
+}
+
+.bg-primary, .btn-primary, .btn-primary:active, .btn-primary:hover {
+    background-color: #125B62!important;
+}
+
+.btn-primary, .code-overflow, p {
+    font-family: tahoma; 
+    font-size: 10pt;
+}
+
+.text-primary {
+    color: #169C72!important;
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 15pt;
+}
+
+a, a:hover, .btn-primary:hover {
+    color: #169C72!important;
+    text-decoration: none;
+}
+
+.totoro{
+background-image: url('../../assets/img/totoro.png');
+background-position:bottom center;
+background-size:contain;
+background-repeat: no-repeat;
+height:auto;
+}
+
+#CopyCodeExo1, #CopyCodeExo2, #CopyCodeExo3, #CopyCodeExo4 {
+    width:100%;
+}
