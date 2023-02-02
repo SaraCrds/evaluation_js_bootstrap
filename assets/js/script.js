@@ -55,16 +55,17 @@ input.addEventListener("keypress", (event) => {
 // BUTTON CLICK EVENT
 
 ageButton.addEventListener('click', function exo1 () {
+    document.getElementById("exo1text").innerHTML = "";
     // PAS DE WHILE VU QUE UTILISATION D'UN ADDEVENTLISTENER
     // GET AGE FROM INPUT
-    myArray[y] = parseFloat(document.getElementById("age").value);
-    document.getElementById("age").value=""; //remettre une valeur vide dans l'input après avoir récupérer la valeur entré par l'utilisateur
-    if (myArray[y] >= 100)
-    {
-        hundred = true;
-    }
-    y++;
-    n++;
+        myArray[y] = parseFloat(document.getElementById("age").value);
+        document.getElementById("age").value=""; //remettre une valeur vide dans l'input après avoir récupérer la valeur entré par l'utilisateur
+        if (myArray[y] >= 100)
+        {
+            hundred = true;
+        }
+        y++;
+        n++;
 
     document.getElementById("exo1text").innerHTML = ("<br> Voici la liste des âges que vous avez donnez: " + myArray + "<br>");
 
@@ -104,10 +105,13 @@ ageButton.addEventListener('click', function exo1 () {
     x++;
 }
 
-
 document.getElementById("exo1text").innerHTML += ("<br> Dans les " + arrLen + " âges que vous nous avez données, il y a: <br>" + jeune + " personnes de moins de 20 ans. <br>" + 
 moyens + " personnes entre 20 et 40 ans. <br>" + vieux + " personnes de plus de 40 ans. <br><br>" + "Il y a également " + und + " données non-numérique.");
-}
+
+
+y=0;
+myArray= new Array();
+hundred=false;}
 });
 
 
