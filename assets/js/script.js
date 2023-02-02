@@ -6,13 +6,6 @@ copyButton.addEventListener('click', (event) => {
     navigator.clipboard.writeText(content);
 })
 
-// copyButton.addEventListener('click', (event) => {
-//   debugger;
-//   copyButton.setAttribute('data-toggle', 'tooltip');
-//   copyButton.setAttribute('data-placement', 'top');
-//   copyButton.setAttribute('title', "Copié!");
-// });
-
 // COPY TO CLIPBOARD EXO2
 
 const copyButton2 = document.getElementById('CopyCodeExo2');
@@ -39,45 +32,59 @@ copyButton4.addEventListener('click', (event) => {
 
 // EXERCICE 01
 
-const exo1Button = document.getElementById('btnexo1');
-exo1Button.addEventListener('click', (event) => {
-  var myArray = new Array();
+const ageButton = document.getElementById('btnage');
+var myArray = new Array();
 n = 1;
 y = 0;
 var hundred = false;
-myArray[y]= 0;
-
-// ASKING AGE UNTIL 100
-
-while (hundred == false)
-    {
-    myArray[y] = parseFloat(prompt("Entrez la donnée numéro " + n ));
-    if (myArray[y] >= 100)
-    {
-        hundred = true;
-    }
-    y++;
-    n++;
-}
-
-document.getElementById("exo1text").innerHTML = ("<br> Voici la liste des âges que vous avez donnez: " + myArray + "<br>");
-
-var arrLen = myArray.length;
 let x = 0;
 let jeune =0 ;
 let moyens = 0;
 let vieux = 0;
 let und = 0;
 
-// CHECKING  IF < 20 = JEUNE; IF > 40 = VIEUX; ELSE = MOYENS; +NAN INFOS
+// FAIRE EN SORTE QUE CA FONCTIONNE QUAND ON APPUIE SUR ENTRE AUSSI!!!!!
+let input = document.getElementById("age");
+input.addEventListener("keypress", (event) => {
+    if (event.key == "Enter"){
+        event.preventDefault();
+        ageButton.click();
+    }
+});
 
-while ( x < arrLen)
+// BUTTON CLICK EVENT
+
+ageButton.addEventListener('click', function exo1 () {
+    // PAS DE WHILE VU QUE UTILISATION D'UN ADDEVENTLISTENER
+    // GET AGE FROM INPUT
+    myArray[y] = parseFloat(document.getElementById("age").value);
+    document.getElementById("age").value=""; //remettre une valeur vide dans l'input après avoir récupérer la valeur entré par l'utilisateur
+    if (myArray[y] >= 100)
+    {
+        hundred = true;
+    }
+    y++;
+    n++;
+
+    document.getElementById("exo1text").innerHTML = ("<br> Voici la liste des âges que vous avez donnez: " + myArray + "<br>");
+
+    // CHECKING  IF < 20 = JEUNE; IF > 40 = VIEUX; ELSE = MOYENS; +NAN INFOS
+
+    let arrLen = myArray.length;
+
+    if (hundred==true) {
+        while ( x < arrLen)
 {
 
     if ( myArray[x] < 20 )
     {
         console.log(myArray[x] + " = jeune")
         jeune++;
+    }
+
+    else  if (isNaN(myArray[x]) == true)
+    {
+        und++;
     }
 
     else if ( 40 < myArray[x] )
@@ -94,18 +101,14 @@ while ( x < arrLen)
         moyens++;
     }
 
-    else 
-    {
-        und++;
-    }
-
     x++;
 }
 
 
 document.getElementById("exo1text").innerHTML += ("<br> Dans les " + arrLen + " âges que vous nous avez données, il y a: <br>" + jeune + " personnes de moins de 20 ans. <br>" + 
-moyens + " personnes entre 20 et 40 ans. <br>" + vieux + " personnes de plus de 40 ans. <br><br>" + "Il y a également " + und + " données non-numérique.")
-})
+moyens + " personnes entre 20 et 40 ans. <br>" + vieux + " personnes de plus de 40 ans. <br><br>" + "Il y a également " + und + " données non-numérique.");
+}
+});
 
 
 // EXERCICE 02
@@ -124,39 +127,69 @@ TableMultiplication(7);
 
 // EXERCICE 03
 
-const exo3Button = document.getElementById('btnexo3');
-exo3Button.addEventListener('click', (event) => {
-var tab = ["audrey", "aurélien", "flavien", "jérémy", "laurent", "melik", "nouara", "salem", "samuel", "stéphane"];
+const prenomButton = document.getElementById('btnPRENOM');
+
+// FAIRE EN SORTE QUE CA FONCTIONNE QUAND ON APPUIE SUR ENTRE AUSSI!!!!!
+let inputexo2 = document.getElementById("prenom");
+inputexo2.addEventListener("keypress", (event) => {
+    if (event.key == "Enter"){
+        event.preventDefault();
+        prenomButton.click();
+    }
+});
+
+// BUTTON CLICK EVENT
+prenomButton.addEventListener('click', (event) => {
+
+    var tab = ["audrey", "aurélien", "flavien", "jérémy", "laurent", "melik", "nouara", "salem", "samuel", "stéphane"];
 console.log (tab);
 
-let search = prompt ("Ecrivez un prénom à rechercher dans le tableau \nAttention aux accents! :)");
+let search = document.getElementById("prenom").value;
 search = search.toLowerCase();
 var searching = tab.indexOf(search);
 
 if ( searching != -1)
 {
-    document.getElementById("exo3text").innerHTML = ("<br><br> Trouvé! <br> Vous avez trouvez le prénom " + search);
+    document.getElementById("exo3text").innerHTML = ("<br>Trouvé! <br> Vous avez trouvez le prénom " + search);
     tab.splice(searching, 1);
     tab.push(" ");
 }
 else
 {
-    document.getElementById("exo3text").innerHTML = ("<br><br> Perdu! <br> Le prénom " + search + " n'est pas dans la liste!");
+    document.getElementById("exo3text").innerHTML = ("<br>Perdu! <br> Le prénom " + search + " n'est pas dans la liste!");
     trouve = false;
 }
 
 document.getElementById("exo3text").innerHTML += ("<br> Nouvel array: " + tab);
-
-// EDIT: vu que l'exercice n'étais pas sensé se faire en boucle, j'ai simplement enlevé mon "while" et ma variable TROUVE qui me servait à savoir si
-// je devais continuer la boucle ou non.
+document.getElementById("prenom").value = "";
+    
 });
 
 // EXERCICE 04
 
-const exo4Button = document.getElementById('btnexo4');
-exo4Button.addEventListener('click', (event) => {
-PU = parseFloat(prompt("Saisissez le prix unitaine du produit"));
-QTECOM = parseFloat(prompt("Saisissez la quantité souhaité"));
+const puqteButton = document.getElementById('btnPUQTE');
+
+// FAIRE EN SORTE QUE CA FONCTIONNE QUAND ON APPUIE SUR ENTRE AUSSI!!!!!
+let inputexo4 = document.getElementById("prixU");
+inputexo4.addEventListener("keypress", (event) => {
+    if (event.key == "Enter"){
+        event.preventDefault();
+        puqteButton.click();
+    }
+});
+
+// FAIRE EN SORTE QUE CA FONCTIONNE QUAND ON APPUIE SUR ENTRE AUSSI!!!!!
+let inputexo4_2 = document.getElementById("QTEc");
+inputexo4_2.addEventListener("keypress", (event) => {
+    if (event.key == "Enter"){
+        event.preventDefault();
+        puqteButton.click();
+    }
+});
+
+puqteButton.addEventListener('click', (event) => {
+PU = parseFloat(document.getElementById("prixU").value);
+QTECOM = parseFloat(document.getElementById("QTEc").value);
 TOT = PU*QTECOM;
 PORTINI = 0;
 
@@ -180,7 +213,8 @@ else if (TOT > 200) {
 }
 
 else {
-    alert ("Une des données saisies n'était pas un nombre!")
+    document.getElementById("exo4text").innerHTML = ("<br> <p class='text-danger fw-bold'>! ATTENTION ! Une des données saisies n'était pas un nombre!</p>");
+    return false;
 }
 
 // CALCUL PORT

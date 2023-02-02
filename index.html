@@ -39,19 +39,25 @@
             <div class="col mx-4 mt-3 bg-dark text-white px-2 py-1">
                 <h1 class="display-6 text-uppercase text-primary">Introduction</h1>
             <div class="row no-gutters my-3">
-            <div class="col col-md-8 overflow">
+            <div class="col col-md-8">
                 <h2 class="text-uppercase text-primary">Présentation</h2>
                 <p>Code fait dans le cadre d'un bonus de l'évaluation sur le Javascript. <br>
                 J'ai déjà utilisé plusieurs fois bootstrap, étant donné que le site que j'utilise le plus pour codé est sous bootstrap5;
                 <br>J'ai essayé d'utiliser le moins possible le CSS mise à part pour des choses qui me parraissait infaisable, ou trop compliqué à faire via bootstrap.
                 <br>Cet onglet sert en réalité à rien, je trouvais juste plus sympathique d'en avoir cinq, et de ne pas arriver sur les exercices de Javascript directement.
-                <br>Pour les boutons "copier le code", j'ai été obligé d'utilisé du CSS car la class "btn-block" ne fonctionnait pas (si j'ai du temps, j'essayerais de revenir sur le code pour voir quel est le soucis)
                 </p>
                 <p class="text-center"><a href="https://github.com/SaraCrds">mon lien github</a></p>
+                <div class="overflow-sm">
                 <h2 class="text-uppercase text-primary">ChangeLog 25/01</h2>
                 <p>Correction d'une erreur qui affichait le fait d'avoir gagné et perdu en même temps sur l'exercice 03;
                     <br> L'erreur était dû au fait que j'avais oublié de supprimer la condition de mon else if quand je l'ai passé en else.
                 </p>
+                <h2 class="text-uppercase text-primary">ChangeLog 30/01</h2>
+                <p>Remplacement de tout les boutons pour les exercices [01;03;04] pour mettre à la place des inputs; changement de code JS en accordance avec les inputs.
+                    <br>Correction de l'erreur avec les boutons "copier le code" qui avait la bonne largeur via CSS > fait avec bootstrap maintenant.
+                    <br>Correction du non-comptage des données non-numériques dans l'exercice 01;
+                </p>
+                </div>
             </div>
             <div class="col-0 col-md-4 p-0 totoro"></div>
             </div>
@@ -63,10 +69,13 @@
                 <!-- RIGHT COLLUMN -->
                 <div class="col col-md-7 mx-4 mt-3 bg-dark text-white px-2 py-1">
                         <h1 class="display-6 text-uppercase text-primary">Exercice 01</h1>
-                        <div class="overflow text-center">
-                             <p>Pour testez l'exercice, appuyez sur ce bouton: </p>
-                             <button class="btn btn-primary border-0 py-0 px-4 mb-1 text-uppercase" id="btnexo1">Testez l'exercice 01</button>
-                             <p id ="exo1text"></p>
+                        <div class="overflow">
+                             <p class="mb-2">Entrez un age par input <br>Le compte s'arrêtera automatique une fois atteint le centenaire: </p>
+                             <div class="input-group">
+                                <input class="form-control form-control-sm" type="text" id="age" value="" />  
+                                <button class="btn btn-primary border-0 py-0 px-4 text-uppercase" id="btnage">Confirmez</button>
+                             </div>
+                             <p class="text-center" id ="exo1text"></p>
                         </div>
                 </div>
                 <!-- RIGHT COLLUMN -->
@@ -141,7 +150,9 @@ moyens + &quot; personnes entre 20 et 40 ans. &lt;br&gt;&quot; + vieux + &quot; 
 });
                         </div>
                         <br>
+                        <div class="d-grid gap-2 mt-3"> 
                             <button class="btn btn-primary copycode border-0 py-1 px-4 mb-1 text-uppercase" id="CopyCodeExo1">copier le code</button>
+                            </div>
                 </div>
                 <!--------END----------->
             </div>
@@ -174,7 +185,9 @@ function TableMultiplication (number){
 <br>    TableMultiplication(7);
                         </div>
                         <br>
+                        <div class="d-grid gap-2 mt-3"> 
                         <button class="btn btn-primary copycode border-0 py-1 px-4 mb-1 text-uppercase" id="CopyCodeExo2">copier le code</button>
+                        </div>
                 </div>
                 <!--------END----------->
             </div>
@@ -185,10 +198,13 @@ function TableMultiplication (number){
                 <!-- RIGHT COLLUMN -->
                 <div class="col col-md-7 mx-4 mt-3 bg-dark text-white px-2 py-1">
                         <h1 class="display-6 text-uppercase text-primary">Exercice 03</h1>
-                        <div class="overflow text-center">
-                             <p>Pour testez l'exercice, appuyez sur ce bouton: </p>
-                             <button class="btn btn-primary border-0 py-0 px-4 mb-1 text-uppercase" id="btnexo3">Testez l'exercice 03</button>
-                             <p id ="exo3text"></p>
+                        <div class="overflow">
+                             <p class="mb-2">Entrez le prénom à chercher dans la liste: </p>
+                             <div class="input-group">
+                             <input class="form-control form-control-sm" type="text" id="prenom" value="" />  
+                             <button class="btn btn-primary border-0 py-0 px-4 text-uppercase" id="btnPRENOM">Confirmez</button>
+                             </div>
+                             <p class="text-center"  id ="exo3text"></p>
                         </div>
                 </div>
                 <!-- RIGHT COLLUMN -->
@@ -223,7 +239,9 @@ const exo3Button = document.getElementById('btnexo3');
 <br>});
                         </div>
                         <br>
+                        <div class="d-grid gap-2 mt-3"> 
                         <button class="btn btn-primary copycode border-0 py-1 px-4 mb-1  text-uppercase" id="CopyCodeExo3">copier le code</button>
+                        </div>
                 </div>
                 <!--------END----------->
             </div>
@@ -233,11 +251,17 @@ const exo3Button = document.getElementById('btnexo3');
             <div class="row no-gutters my-3">
                 <!-- RIGHT COLLUMN -->
                 <div class="col col-md-7 mx-4 mt-3 bg-dark text-white px-2 py-1">
-                        <h1 class="display-6 text-uppercase text-primary">Exercice 03</h1>
-                        <div class="overflow text-center">
-                             <p>Pour testez l'exercice, appuyez sur ce bouton: </p>
-                             <button class="btn btn-primary border-0 py-0 px-4 mb-1 text-uppercase" id="btnexo4">Testez l'exercice 04</button>
-                             <p id ="exo4text"></p>
+                        <h1 class="display-6 text-uppercase text-primary">Exercice 04</h1>
+                        <div class="overflow">
+                             <p class="mb-2">Entrez le prix unitaire du produit souhaité: </p>
+                             <input class="form-control form-control-sm" type="text" id="prixU" value="" /> 
+                             <br>
+                             <p class="mb-2">Entrez la quantité de produit souhaitée: </p>
+                             <input class="form-control form-control-sm" type="text" id="QTEc" value="" /> 
+                             <div class="d-grid gap-2 mt-3"> 
+                             <button class="btn btn-primary border-0 py-0 py-1 text-uppercase" id="btnPUQTE">Confirmez</button>
+                            </div>
+                             <p class="text-center" id ="exo4text"></p>
                         </div>
                 </div>
                 <!-- RIGHT COLLUMN -->
@@ -312,7 +336,9 @@ const exo4Button = document.getElementById('btnexo4');
 <br>});
                         </div>
                         <br>
+                        <div class="d-grid gap-2 mt-3"> 
                         <button class="btn btn-primary copycode border-0 py-1 px-4 mb-1 text-uppercase" id="CopyCodeExo4">copier le code</button>
+                        </div>
                 </div>
                 <!--------END----------->
             </div>

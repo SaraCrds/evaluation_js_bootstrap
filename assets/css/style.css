@@ -12,6 +12,12 @@
     overflow-wrap: break-word;
 }
 
+.overflow-sm {
+    height:200px;
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
 .code-overflow {
     height:340px;
     overflow: auto;
@@ -49,8 +55,4 @@ background-position:bottom center;
 background-size:contain;
 background-repeat: no-repeat;
 height:auto;
-}
-
-#CopyCodeExo1, #CopyCodeExo2, #CopyCodeExo3, #CopyCodeExo4 {
-    width:100%;
 }
